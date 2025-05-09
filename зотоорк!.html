@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="x-icon" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zotrook! Corp</title>
+    <script>
+        window.onload = function () {
+        const btn = document.getElementById('aa');
+        btn.addEventListener('click', () => {
+        document.body.classList.toggle('rainbow');
+        localStorage.setItem('rainbowMode', document.body.classList.contains('rainbow'));
+    });
+
+    if (localStorage.getItem('rainbowMode') === 'false') {
+    document.body.classList.add('rainbow');
+    }
+    }
+    </script>
+    <style>
+    body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 45px;
+}
+
+:root{
+    --accent: rgb(0, 255, 0);
+}
+#rr{
+    color: red;
+    text-shadow: 1px 3px 30px red;
+    cursor: not-allowed;
+}
+#ss{
+    color: red;
+    text-shadow: 1px 3px 30px red;
+    cursor: not-allowed;
+}
+#aa{
+    font-size: 24px;
+    background-color: black;
+    border: 4px solid black;
+    border-radius: 24px 25px;
+    cursor: cell;
+}
+#aa:hover{
+    background: linear-gradient(50deg,rgb(0, 255, 0),red,blue,rgb(255, 0, 242));
+    background-size: 400% 400%;
+    animation: colorAnimation 2s ease infinite;
+}
+@keyframes colorAnimation{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+#aa:hover{
+    background-color: blue;
+}
+#aa:active{
+    font-size: 30px;
+    background-color: rgb(255, 0, 242);
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    margin-top: 0;
+    background-color: rgb(0, 0, 0,0.5);
+    box-shadow: inset 1px 3px 30px rgb(0, 0, 0,0.5);
+    border-radius: 24px 25px;
+    padding: 20px;
+}
+.form-container:hover{
+    border: 4px solid red;
+    font-size: 17px;
+}
+.form-group{
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+input,select{
+    padding: 12px;
+    background-color: rgb(255, 255, 255,0.055);
+    border-radius: 24px 25px;
+    border: 2px solid black;
+    color: red;
+    width: 90%;
+    margin-right: 200px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 15px;
+}
+label{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: rgb(0, 0, 0,0.5);
+    border-radius: 24px 25px;
+    padding-inline: 0.3em;
+    transition: 400ms ease , color 400ms ease;
+    pointer-events: none;
+    transform-origin: left top;
+    transform: translateY(0);
+    color: rgb(95, 9, 9);
+}
+input::placeholder{
+    opacity: 0;
+}
+input:focus + label ,
+input:not(:placeholder-shown) + label{
+    transform: translateY(calc(-50% - 12px)) scale(0.8);
+    color: var(--accent);
+}
+input:focus{
+    background-color: rgb(0, 0, 0,0.5);
+    border: 2px solid rgba(12, 168, 12, 0.795);
+    outline: none;
+}
+.submit-btn-container{
+    width: 140%;
+    justify-content: center;
+    display: flex;
+}
+#submit-button{
+    padding: 14px 24px;
+    background-color: rgba(245, 245, 220, 0);
+    color: black;
+    border: 4px solid black;
+    border-radius: 24px 25px;
+    font-size: 18px;
+    width: 100%;
+    margin-right: 200px;
+    margin-left: 45px;
+    cursor: pointer;
+}
+#submit-button:hover{
+    background-color: rgb(126, 1, 1);
+
+}
+#submit-button:active{
+    font-size: 24px;
+    background-color: rgb(255, 0, 255);
+    transform: scale(0.4);
+}
+.rainbow{
+    background: linear-gradient(50deg,rgb(0, 255, 0),blueviolet,aqua);
+    background-size: 400% 400%;
+    animation: colorAnimation 10s ease infinite;
+}
+@keyframes colorAnimation{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <H1 id="ss">зотоорк!</H1>
+        <h1 id="rr">Home.</h1>
+        <button id="aa" onclick="audio.play()"><b>Rainbow Mode</b></button>
+        <br>
+        <script type="text/javascript">
+            const audio = new Audio();
+            audio.src = "mixkit-sci-fi-interface-robot-click-901.wav"
+        </script>
+        <form action="Welcome!.html" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="name" autocomplete="off" required>
+                <label for="name">Enter your <b>Name & Last Name</b></label>
+                <i></i>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="name" placeholder="name" autocomplete="off" required>
+                <label for="name">Enter your <b>Email</b></label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="name" placeholder="name" autocomplete="off" required>
+                <label for="name">Enter your <b>Address</b></label>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="name" placeholder="name" autocomplete="off" required>
+                <label for="name">Enter your <b>Password</b></label>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="name" placeholder="name" autocomplete="off" required>
+                <label for="name">Enter your <b>Tel</b></label>
+            </div>
+
+            <div class="form-group">
+                <input type="date" id="name" placeholder="name" autocomplete="off" required>
+                <label for="name">Enter your <b>Date & Time</b></label>
+            </div>
+            <div class="submit-btn-container">
+                <input type="submit" id="submit-button" name="submit-button" value="Enter" onclick="audio.play">
+                <script type="text/javascript">
+                    const audio = new Audio();
+                    audio.src = "mixkit-quick-win-video-game-notification-269.wav"
+                </script>
+        </form>
+    </div>
+</body>
+</html>
