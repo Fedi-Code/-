@@ -29,17 +29,3 @@ sub.onclick = function (event) {
         window.alert('Registration Succeeded!');
     } 
 };
-
-    
-    let fruit = "Ananas"
-    console.log(fruit)
-    if (fruit === "Ananas"){
-    console.log("its the right fruit");
-    }
-
-    else {
-    console.log("wtf?");
-    }
-
-};
-
