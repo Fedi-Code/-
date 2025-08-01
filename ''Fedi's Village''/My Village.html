@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découverte de la Tunisie - Tabarka</title>
+    <style>
+        /* Enable smooth scrolling for the whole document */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(50deg,rgb(0, 200, 0),blueviolet,aqua);
+            background-size: 400% 200%;
+            animation: colorAnimation 10s infinite;
+            position: relative; /* Needed for fixed position scroll buttons */
+        }
+        @keyframes colorAnimation{
+            0%{background-position: 0% 50%;}
+            50%{background-position: 100% 50%;}
+            100%{background-position: 0% 50%;}
+        }
+
+        header {
+            background-color: rgba(0,0,0,0.5);
+            box-shadow: inset 1px 3px 30px rgba(0,0,0,0.5);
+            border-radius: 24px 25px;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: fit-content;
+            margin-left: 200px;
+            width: 1000px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #00c707;
+            text-shadow: 1px 3px 30px #00c707 ;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .image-row img {
+            width: 280px;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #eee;
+            font-size: 0.9em;
+        }
+
+        .merci {
+            text-align: center;
+            font-size: 1.5em;
+            color: #004d66;
+            margin-top: 50px;
+        }
+        video{
+            border: 5px solid rgb(255, 0, 0);
+            border-radius: 24px 25px;
+            background-color: black;
+            background-size: 400% 400%;
+        }
+        p{
+            font-size: 20px;
+        }
+        p:hover{
+            font-size: 23px;
+            transition: all 2s ease;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+        }
+        
+        .scroll-bottom {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 99;
+        }
+        
+        .scroll-img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        
+        .scroll-img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+    
+    <br>
+    <header>
+        <h1>À la découverte de la Tunisie - Tabarka</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Caractéristiques générales de Tabarka</h2>
+    <p>
+    <b>Tabarka est une ville située au nord-ouest de la Tunisie, bordée par la mer Méditerranée. 
+    Connue pour sa beauté naturelle exceptionnelle, elle combine des plages de sable fin, des montagnes verdoyantes, 
+    et des récifs coralliens qui en font un lieu idéal pour la plongée sous-marine. Sa riche histoire, marquée par 
+    des vestiges romains et une forteresse ottomane, témoigne de l'importance stratégique de cette région à travers les siècles. 
+    La population de Tabarka est accueillante et traditionnelle, et bien que l'arabe soit la langue officielle, le français est couramment parlé dans la vie quotidienne.</b>
+    </p>
+
+        </section>
+
+        <div class="image-row">
+            <img src="images (1).jpg" alt="Plage de Tabarka">
+            <img src="téléchargement (4).jpg" alt="Montagnes de Tabarka">
+            <img src="téléchargement (5).jpg" alt="Forteresse de Tabarka">
+        </div>
+
+        <section>
+            <h2>Caractéristiques naturelles de Tabarka</h2>
+    <p>
+     <b> Tabarka est une destination qui se distingue par sa nature préservée et ses paysages à couper le souffle. 
+        La ville est bordée par des plages magnifiques aux eaux cristallines et des montagnes couvertes de forêts de pins. 
+        Les collines verdoyantes et les forêts méditerranéennes ajoutent à la beauté du paysage, offrant un cadre paisible et serein. 
+        Tabarka est également célèbre pour ses récifs coralliens, un véritable paradis pour les plongeurs. 
+        Les amoureux de la nature apprécieront aussi les nombreuses sources d'eau douce qui ponctuent la région et les sentiers de randonnée offrant des vues imprenables sur la mer et la campagne environnante.</b>
+    </p>
+
+        </section>
+
+        <div class="video-container">
+            <video width="640" height="360" controls>
+                <source src="videoplayback (1).mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="merci">
+            <h1>MERCI POUR VOTRE ATTENTION !!!</h1>
+        </div>
+    </main>
+    
+    <a id="bottom"></a>
+    <div class="scroll-top">
+        <a href="#top">
+            <img src="https://cdn-icons-png.flaticon.com/512/892/892692.png" alt="Scroll to top" class="scroll-img">
+        </a>
+    </div>
+     
+    <div class="scroll-bottom">
+        <a href="#bottom">
+            <img src="https://cdn-icons-png.flaticon.com/512/892/892656.png" alt="Scroll to bottom" class="scroll-img">
+        </a>
+    </div>
+
+</body>
+</html>
