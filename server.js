@@ -13,7 +13,7 @@ app.post("/send", async (req, res) => {
         service: "gmail",
         auth: {
             user: "fadfoud.code@gmail.com",
-            pass: "FSDazerty1409" // create Gmail App Password
+            pass: "" 
         }
     });
 
@@ -41,3 +41,4 @@ Date: ${date}
 });
 
 app.listen(3000, () => console.log("Server running on port 3000"));
+
