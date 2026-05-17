@@ -1,1 +1,1 @@
-"The best way to grow as a developer is to embrace the challenge of learning something new every day. Coding isn't just about writing lines of code—it's about solving problems, staying curious, and continuously improving."
+"The best way to grow as a developer is to embrace the challenge of learning something new every day. Coding isn't just about writing lines of code it's about solving problems, staying curious, and continuously improving."
