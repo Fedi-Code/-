@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Would You be my wife ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9ecf,#ffd6e7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    font-size:3rem;
+    color:white;
+    margin-bottom:50px;
+    text-shadow:2px 2px 8px rgba(0,0,0,.2);
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:100px;
+}
+
+button{
+    border:none;
+    padding:18px 40px;
+    font-size:22px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+#yes{
+    background:#4CAF50;
+    color:white;
+}
+
+#yes:hover{
+    transform:scale(1.08);
+}
+
+#no{
+    background:#ff4d6d;
+    color:white;
+}
+
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    animation:pop .35s;
+}
+
+.card img{
+    width:280px;
+    border-radius:15px;
+}
+
+.card h2{
+    margin-top:20px;
+    color:#ff4081;
+}
+
+.card p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.4);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+/* Falling particles */
+
+.particle{
+    position:fixed;
+    top:-20px;
+    pointer-events:none;
+    z-index:0;
+    animation:fall linear infinite;
+}
+
+.sparkle{
+    color:#fff8b0;
+    font-size:14px;
+    text-shadow:
+        0 0 8px #fff,
+        0 0 18px gold,
+        0 0 25px gold;
+}
+
+.snow{
+    width:8px;
+    height:8px;
+    background:white;
+    border-radius:50%;
+    opacity:.85;
+    box-shadow:0 0 8px white;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:translateY(-30px) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>💖 Would You be my wife? 💖</h1>
+
+<div class="buttons">
+    <button id="yes">YES ❤️</button>
+    <button id="no">NO 😒</button>
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+    <div class="card">
+        <img src="702893656_18051178781739748_549171591175829815_n.png" alt="Cute Bear">
+        <h2>YAYYYYY!!❤️🥹(hablk rabi t9oul no ha eya)</h2>
+        <p>You just made me the happiest person ya Ayolitaaaaa!</p>
+    </div>
+</div>
+
+<script>
+
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const popup = document.getElementById("popup");
+
+let moved = false;
+let yesScale = 1;
+
+window.addEventListener("load", () => {
+
+    const rect = noBtn.getBoundingClientRect();
+
+    noBtn.dataset.left = rect.left;
+    noBtn.dataset.top = rect.top;
+
+});
+
+function randomPosition(){
+
+    const margin = 40;
+
+    const maxX = window.innerWidth - noBtn.offsetWidth - margin;
+    const maxY = window.innerHeight - noBtn.offsetHeight - margin;
+
+    const yesRect = yesBtn.getBoundingClientRect();
+
+    let x, y;
+    let distance;
+
+    do{
+
+        x = Math.random() * (maxX - margin) + margin;
+        y = Math.random() * (maxY - margin) + margin;
+
+        const dx = x - yesRect.left;
+        const dy = y - yesRect.top;
+
+        distance = Math.sqrt(dx * dx + dy * dy);
+
+    }while(distance < 250); // Never appear close to YES
+
+    return {x, y};
+
+}
+
+function growYesButton(){
+
+    yesScale *= 1.15;      // Grow by 15% every click
+
+    if(yesScale > 10){
+        yesScale = 10;
+    }
+
+    yesBtn.style.transform = `scale(${yesScale})`;
+}
+
+function toggleButtonPosition(){
+
+    // Make YES bigger every attempt
+    growYesButton();
+
+    if(!moved){
+
+        const pos = randomPosition();
+
+        noBtn.style.position = "fixed";
+        noBtn.style.left = pos.x + "px";
+        noBtn.style.top = pos.y + "px";
+
+        moved = true;
+
+    }else{
+
+        noBtn.style.left = noBtn.dataset.left + "px";
+        noBtn.style.top = noBtn.dataset.top + "px";
+
+        moved = false;
+
+    }
+
+}
+
+noBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    toggleButtonPosition();
+
+});
+
+yesBtn.addEventListener("click", ()=>{
+
+    popup.style.display = "flex";
+
+});
+
+popup.addEventListener("click", ()=>{
+
+    popup.style.display = "none";
+
+});
+
+
+// ==========================
+// Falling sparkles & snow
+// ==========================
+
+function createParticle(){
+
+    const particle = document.createElement("div");
+
+    particle.classList.add("particle");
+
+    if(Math.random() < 0.5){
+
+        particle.classList.add("sparkle");
+        particle.innerHTML = "✨";
+
+    }else{
+
+        particle.classList.add("snow");
+
+    }
+
+    particle.style.left = Math.random() * window.innerWidth + "px";
+
+    const size = Math.random() * 14 + 8;
+
+    particle.style.fontSize = size + "px";
+
+    particle.style.animationDuration =
+        (Math.random() * 5 + 5) + "s";
+
+    particle.style.opacity = Math.random();
+
+    document.body.appendChild(particle);
+
+    setTimeout(()=>{
+        particle.remove();
+    },10000);
+
+}
+
+setInterval(createParticle,180);
+</script>
+
+</body>
+</html>
